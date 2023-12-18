@@ -41,6 +41,64 @@ if __name__ == '__main__':
     ep_chassis = ep_robot.chassis
 
     ## Write your code here
+from robomaster import robot
+import time
+from robomaster import camera
+
+if __name__ == '__main__':
+    ep_robot = robot.Robot()
+    ep_robot.initialize(conn_type="ap")
+
+    ep_chassis = ep_robot.chassis
+    ep_led = ep_robot.led
+    ep_camera = ep_robot.camera
+
+    print("Video streaming started.....")
+    ep_camera.start_video_stream(display=True, resolution = camera.STREAM_360P)
+
+    ep_led.set_led(comp = "all",r=0,g=0,b=255,effect="on")
+
+    ep_chassis.move(x=2.4, y=0, z=0, xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0.5, y=0, z=80,xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=0,b=0,effect="on")
+
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=215,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=-1.5, z=0, xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=215,b=0,effect="on")
+
+    ep_led.set_led(comp = "all",r=128,g=0,b=128,effect="on")
+    ep_chassis.move(x=0, y=0, z=55, xy_speed=1.3).wait_for_completed()
+
+    ep_chassis.move(x=1.4, y=0, z=0, xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=45).wait_for_completed()
+    ep_led.set_led(comp = "all",r=128,g=0,b=0,effect="on")
+
+    ep_chassis.move(x=1.5, y=0, z=0,xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=51,g=153,b=102,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=95).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=0,b=255,effect="on")
+
+    ep_chassis.move(x=2, y=0, z=0,xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=204,b=255,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=85).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=128,b=128,effect="on")
+
+    ep_chassis.move(x=0.5, y=0, z=0,xy_speed=1.3).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=0,b=128,effect="on")
+
+    time.sleep(4)
+    ep_camera.stop_video_stream()
+    print("Stopped video streaming.....")
+
+    ep_robot.close()
 
 
 
