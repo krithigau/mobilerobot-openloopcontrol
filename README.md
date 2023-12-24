@@ -10,26 +10,35 @@ To develop a python control code to move the mobilerobot along the predefined pa
 ## Procedure
 
 Step1:
+
+
 Measure the distance to be travelled by the mobilerobot in metres distance.
 
 <br/>
 
 Step2:
+
+
 Accordingly give the x,y and z directions in .move() function from the ep_chassis.
 
 <br/>
 
 Step3:
 
+
 Set the speed accordingly using xy_speed in .move() function.
 <br/>
 
 Step4:
+
+
 Use r,g,b parameters in .set_led() to give the colour code for the mobilrobot.
 
 <br/>
 
 Step5:
+
+
 Save the code and run it successfully.
 
 <br/>
